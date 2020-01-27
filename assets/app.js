@@ -69,6 +69,7 @@ $(document).ready(function () {
     startButton.attr("id", "start-button")
     $("#questionText").append(startButton);
     $("#start-button").on("click", questionDisplay);
+    
 
     function questionDisplay() {
 
@@ -127,15 +128,16 @@ $(document).ready(function () {
 
 
 
-            if ((correctCount + wrongCount) == QOptions.length) {
+            if ((correctCount + wrongCount) === QOptions.length) {
                 $("#questionText").text("You answered " + correctCount + " correct!")
                 $("#answerChoices").empty();
-
                 //reset button
                 var resetButton = $("<img>")
                 resetButton.attr("src", "assets/images/resetButton.png");
                 resetButton.attr("id", "reset-button")
                 $("#questionText").append(resetButton);
+                $("#reset-button").on("click", reset);
+                
 
             }
 
@@ -152,8 +154,8 @@ $(document).ready(function () {
         startButton.attr("src", "assets/images/startButton.png");
         startButton.attr("id", "start-button")
         $("#questionText").append(startButton);
-        $("#start-button").on("click", reset);
-        //user clicks start button, and first question shows in div
+        $("#start-button").on("click", questionDisplay);
+
 
     };
 
@@ -173,6 +175,8 @@ $(document).ready(function () {
         $("#timerText").text(time);
         if (time === 0) {
             stop();
+            wrongCount++;
+            console.log((correctCount + wrongCount));
             $("#questionText").text("The correct answer is " + currentQuestion.choices[currentQuestion.answer] + "!");
             $("#answerChoices").empty();
             setTimeout(function () {
