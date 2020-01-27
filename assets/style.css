@@ -3,6 +3,7 @@
 body {
     background-image: url(../assets/images/pattern.png);
     background-size: 300px 300px;
+    width: 100%;
   
 }
 
@@ -16,7 +17,6 @@ body {
 }
 
 /* top portion of browser */
-
 #timerContainer {  
     font-size: 30px;
     text-align: center;
@@ -50,7 +50,6 @@ body {
 }
 
 /* bottom portion of browser */
-
 #questionContainer {
   left: 50%;
 }
@@ -93,15 +92,12 @@ body {
 }
 
 /* footer */
-
 #footer {
     font-size: 11px;
     text-align: center;
     color: #008394;
     font-family: 'Sulphur Point', sans-serif;
     letter-spacing: 2px;
-
-
 
     position: relative;
     left: 0;
@@ -114,6 +110,12 @@ body {
     text-align: center;
   }
 
+  #start-button {
+    max-width: 500px;
+    transform: translate(0px, 87px);
+  }
+
+
 /* media queries */
 @media only screen and (max-width:980px) {
     body {
@@ -124,5 +126,5 @@ body {
   
   @media only screen and (max-width: 768px) {
     body {
-      max-width: 100%;
-    }s
+      max-width: 100%;}
+    };
