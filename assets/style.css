@@ -2,14 +2,16 @@
 
 body {
     background-image: url(../assets/images/pattern.png);
-    background-repeat:initial;
     background-size: 300px 300px;
+  
 }
 
 #container {
     margin: 0 auto;
     left: 50%;
     max-width: 950px;
+    height: auto;
+
 
 }
 
@@ -19,7 +21,7 @@ body {
     font-size: 30px;
     text-align: center;
     color: #3a2618;
-    font-family: 'Wendy One', sans-serif;
+    font-family: 'Sulphur Point', sans-serif;
     letter-spacing: 2px;
 
     position: relative;
@@ -29,10 +31,8 @@ body {
 }
 
 #timerImage {
-    max-width:80%;
+    max-width:900px;
     height:auto;
-
-
     margin-top: 250px;
 }
 
@@ -40,53 +40,89 @@ body {
     font-size: 40px;
     text-align: center;
     color: #3a2618;
-    font-family: 'Wendy One', sans-serif;
+    font-family: 'Sulphur Point', sans-serif;
     letter-spacing: 2px;
 
     position: relative;
-
-    top: 50%;
-
     left: 50%;
-    transform: translate(-50%, -360%);
+    transform: translate(-50%, -189px);
 
 }
 
 /* bottom portion of browser */
 
+#questionContainer {
+  left: 50%;
+}
+  
 
 #questionImage {
-    max-width:80%;
+    max-width:880px;
     height:auto;
-    transform: translate(12.4%, -64%); 
+    position: relative;
+    transform: translate(35px, -354px); 
 }
 
 
 #questionText {
     font-size: 30px;
     text-align: center;
-    color: #3a2618;
-    font-family: 'Wendy One', sans-serif;
+    color: #008394;
+    font-family: 'Sulphur Point', sans-serif;
     letter-spacing: 2px;
 
     position: relative;
 
+    max-width: 650px;
+
     left: 50%;
-    transform: translate(-50%, -1900%);
+    transform: translate(-50%, -745px);
 
 }
 
 #answerChoices {
     font-size: 25px;
     text-align: center;
-    color: #3a2618;
-    font-family: 'Wendy One', sans-serif;
+    color: #dd7300;
+    font-family: 'Sulphur Point', sans-serif;
     letter-spacing: 2px;
 
     position: relative;
-
     left: 50%;
-    transform: translate(-50%, -2200%);
-
+    transform: translate(-50%, -760px);
 }
 
+/* footer */
+
+#footer {
+    font-size: 11px;
+    text-align: center;
+    color: #008394;
+    font-family: 'Sulphur Point', sans-serif;
+    letter-spacing: 2px;
+
+
+
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #273238;
+    color: white;
+    text-align: center;
+  }
+
+/* media queries */
+@media only screen and (max-width:980px) {
+    body {
+      margin-right: 5px;
+    }
+  }
+  
+  
+  @media only screen and (max-width: 768px) {
+    body {
+      max-width: 100%;
+    }s
