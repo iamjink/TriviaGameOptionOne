@@ -1,1 +1,92 @@
 
+
+body {
+    background-image: url(../assets/images/pattern.png);
+    background-repeat:initial;
+    background-size: 300px 300px;
+}
+
+#container {
+    margin: 0 auto;
+    left: 50%;
+    max-width: 950px;
+
+}
+
+/* top portion of browser */
+
+#timerContainer {  
+    font-size: 30px;
+    text-align: center;
+    color: #3a2618;
+    font-family: 'Wendy One', sans-serif;
+    letter-spacing: 2px;
+
+    position: relative;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -30%); 
+}
+
+#timerImage {
+    max-width:80%;
+    height:auto;
+
+
+    margin-top: 250px;
+}
+
+#timerText {
+    font-size: 40px;
+    text-align: center;
+    color: #3a2618;
+    font-family: 'Wendy One', sans-serif;
+    letter-spacing: 2px;
+
+    position: relative;
+
+    top: 50%;
+
+    left: 50%;
+    transform: translate(-50%, -360%);
+
+}
+
+/* bottom portion of browser */
+
+
+#questionImage {
+    max-width:80%;
+    height:auto;
+    transform: translate(12.4%, -64%); 
+}
+
+
+#questionText {
+    font-size: 30px;
+    text-align: center;
+    color: #3a2618;
+    font-family: 'Wendy One', sans-serif;
+    letter-spacing: 2px;
+
+    position: relative;
+
+    left: 50%;
+    transform: translate(-50%, -1900%);
+
+}
+
+#answerChoices {
+    font-size: 25px;
+    text-align: center;
+    color: #3a2618;
+    font-family: 'Wendy One', sans-serif;
+    letter-spacing: 2px;
+
+    position: relative;
+
+    left: 50%;
+    transform: translate(-50%, -2200%);
+
+}
+
