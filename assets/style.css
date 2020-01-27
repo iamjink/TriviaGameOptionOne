@@ -81,20 +81,21 @@ body {
   font-weight: bold;
   font-family: 'Sulphur Point', sans-serif;
 
-
-  background-color: white;
-  width: 350px;
-  /* border: 1px solid black; */
-  border-radius: 5%;
-
-
-
   position: relative;
   left: 50%;
   transform: translate(-50%, -715px);
 
 }
 
+.answerBlock{
+  background-color: white;
+  width: 350px;
+  border: 1px solid black;
+  border-radius: 5%;
+  margin-top: 6px;
+  transform: translate(295px, 20px);
+
+}
 
 /* footer */
 #footer {
