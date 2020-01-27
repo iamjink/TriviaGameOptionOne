@@ -1,4 +1,56 @@
 $(document).ready(function () {
+    var QOptions = [
+        {
+            question: "Which river goes through London?",
+            choices: ["Thames", "Ganges", "Yellow River", "River Severn"],
+            answer: 1
+        },
+        {
+            question:"When was President Kennedy killed?",
+            choices: ["1942", "1961", "1963", "1955"],
+            answer: 3
+        },
+        { 
+            question: "What’s the smallest type of tree in the world?",
+            choices: ["Ash", "Birch", "Bonsai", "Acacia"],
+            answer: 3
+        },
+        {
+            question: "What’s the smallest type of tree in the world?",
+            choices: ["Ash", "Birch", "Bonsai", "Acacia"],
+            answer: 3
+        },
+        {
+            question: "What’s the smallest type of tree in the world?",
+            choices: ["Ash", "Birch", "Bonsai", "Acacia"],
+            answer: 3
+        },
+        {
+            question: "What’s the smallest type of tree in the world?",
+            choices: ["Ash", "Birch", "Bonsai", "Acacia"],
+            answer: 3
+        },
+        {
+            question: "What’s the smallest type of tree in the world?",
+            choices: ["Ash", "Birch", "Bonsai", "Acacia"],
+            answer: 3
+        },
+        {
+            question: "What’s the smallest type of tree in the world?",
+            choices: ["Ash", "Birch", "Bonsai", "Acacia"],
+            answer: 3
+        },
+        {
+            question: "What’s the smallest type of tree in the world?",
+            choices: ["Ash", "Birch", "Bonsai", "Acacia"],
+            answer: 3
+        },
+        {
+            question: "What’s the smallest type of tree in the world?",
+            choices: ["Ash", "Birch", "Bonsai", "Acacia"],
+            answer: 3
+        },
+    ];
 
     //setting variables
     var clockRunning = false;
@@ -23,18 +75,35 @@ $(document).ready(function () {
 
     };
 
-    //start button on click function
+    //start button on click function; starts the questions
     function gameStart() {
-        $("#questionText").text("Question One");
         timerStart();
+        questionDisplay();
+
+    }
+
+    function questionDisplay() {
+
+        //randomizing objects in question array and creating a new randomized question array called current question
+        newIndex = Math.floor(Math.random()*QOptions.length);
+        currentQuestion = QOptions[newIndex];
+
+        //displaying new question
+
+        $("#questionText").text(currentQuestion.question);
+
+        
     }
 
     //timer functions
     function timerStart() {
         clearInterval(intervalId);
+        if (!clockRunning) {
+            intervalId = setInterval(decrement, 1500);
+            console.log("time countdonw starts now");
+            clockRunning = true;
+        }
 
-        intervalId = setInterval(decrement, 1500);
-        console.log("time countdonw starts now");
 
     }
 
@@ -48,6 +117,7 @@ $(document).ready(function () {
     }
 
     function stop() {
+        clockRunning = false;
         clearInterval(intervalId);
     }
 

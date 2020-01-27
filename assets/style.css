@@ -22,7 +22,7 @@ body {
     text-align: center;
     color: #3a2618;
     font-family: 'Sulphur Point', sans-serif;
-    letter-spacing: 2px;
+    /* letter-spacing: 2px; */
 
     position: relative;
     top: 20%;
@@ -41,7 +41,7 @@ body {
     text-align: center;
     color: #3a2618;
     font-family: 'Sulphur Point', sans-serif;
-    letter-spacing: 2px;
+    /* letter-spacing: 2px; */
 
     position: relative;
     left: 50%;
@@ -68,7 +68,7 @@ body {
     text-align: center;
     color: #008394;
     font-family: 'Sulphur Point', sans-serif;
-    letter-spacing: 2px;
+    /* letter-spacing: 2px; */
 
     position: relative;
 
@@ -84,7 +84,7 @@ body {
     text-align: center;
     color: #dd7300;
     font-family: 'Sulphur Point', sans-serif;
-    letter-spacing: 2px;
+    /* letter-spacing: 2px; */
 
     position: relative;
     left: 50%;
@@ -97,7 +97,7 @@ body {
     text-align: center;
     color: #008394;
     font-family: 'Sulphur Point', sans-serif;
-    letter-spacing: 2px;
+    /* letter-spacing: 2px; */
 
     position: relative;
     left: 0;
