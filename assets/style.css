@@ -120,6 +120,11 @@ body {
   transform: translate(0px, 71px);
 }
 
+#reset-button {
+  max-width: 500px;
+  transform: translate(0px, 71px);
+}
+
 
 /* media queries */
 @media only screen and (max-width:980px) {

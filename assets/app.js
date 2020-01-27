@@ -62,48 +62,13 @@ $(document).ready(function () {
     var correctCount = 0;
     var wrongCount = 0;
 
-    //start button
-    function reset() {
-        //shows start button 
-
-        var startButton = $("<img>")
-        startButton.attr("src", "assets/images/startButton.png");
-        startButton.attr("id", "start-button")
-        $("#questionText").append(startButton);
-
-        //user clicks start button, and first question shows in div
-
-        $("#start-button").on("click", questionDisplay);
-
-    };
 
 
-    //timer functions
-    function timerStart() {
-        clearInterval(intervalId);
-        if (!clockRunning) {
-            intervalId = setInterval(decrement, 1500);
-            console.log("time countdonw starts now");
-            clockRunning = true;
-        }
-    }
-
-    function decrement() {
-        time--;
-        $("#timerText").text(time);
-        if (time === 0) {
-            stop();
-            console.log("time is up! next question");
-        }
-    }
-
-    function stop() {
-        clockRunning = false;
-        clearInterval(intervalId);
-        time = 15;
-    }
-
-
+    var startButton = $("<img>")
+    startButton.attr("src", "assets/images/startButton.png");
+    startButton.attr("id", "start-button")
+    $("#questionText").append(startButton);
+    $("#start-button").on("click", questionDisplay);
 
     function questionDisplay() {
 
@@ -135,26 +100,43 @@ $(document).ready(function () {
             if (userGuess == currentQuestion.answer) {
                 stop();
                 correctCount++;
-                console.log("correct!")
-                questionDisplay();
+                console.log((correctCount + wrongCount));
+
+
+                $("#questionText").text("Correct!");
+                $("#answerChoices").empty();
+
+                setTimeout(function () {
+                    questionDisplay()
+                }, 2000);
+
+
 
             } else {
                 stop();
                 wrongCount++;
-                console.log("incorrect!")
-                questionDisplay();
+                console.log((correctCount + wrongCount));
+                var j = currentQuestion.answer;
+                $("#questionText").text("Wrong! The correct answer is " + currentQuestion.choices[j] + "!");
+                $("#answerChoices").empty();
+                setTimeout(function () {
+                    questionDisplay();
+                }, 2000);
+
             }
+
+
 
             if ((correctCount + wrongCount) == QOptions.length) {
                 $("#questionText").text("You answered " + correctCount + " correct!")
                 $("#answerChoices").empty();
 
                 //reset button
-                var startButton = $("<img>")
-                startButton.attr("src", "assets/images/resetButton.png");
-                startButton.attr("id", "start-button")
-                $("#questionText").append(startButton);
-                $("#start-button").on("click", questionDisplay);
+                var resetButton = $("<img>")
+                resetButton.attr("src", "assets/images/resetButton.png");
+                resetButton.attr("id", "reset-button")
+                $("#questionText").append(resetButton);
+
             }
 
         });
@@ -162,7 +144,51 @@ $(document).ready(function () {
     }
 
 
-    reset();
+    //start button
+    function reset() {
+        //shows start button 
+
+        var startButton = $("<img>")
+        startButton.attr("src", "assets/images/startButton.png");
+        startButton.attr("id", "start-button")
+        $("#questionText").append(startButton);
+        $("#start-button").on("click", reset);
+        //user clicks start button, and first question shows in div
+
+    };
+
+
+    //timer functions
+    function timerStart() {
+        clearInterval(intervalId);
+        if (!clockRunning) {
+            intervalId = setInterval(decrement, 1500);
+            console.log("time countdonw starts now");
+            clockRunning = true;
+        }
+    }
+
+    function decrement() {
+        time--;
+        $("#timerText").text(time);
+        if (time === 0) {
+            stop();
+            $("#questionText").text("The correct answer is " + currentQuestion.choices[currentQuestion.answer] + "!");
+            $("#answerChoices").empty();
+            setTimeout(function () {
+                questionDisplay();
+            }, 2000);
+        }
+    }
+
+    function stop() {
+        clockRunning = false;
+        clearInterval(intervalId);
+        time = 15;
+    }
+
+
+
 
 
 
