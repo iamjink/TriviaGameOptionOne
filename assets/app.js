@@ -1,16 +1,15 @@
 $(document).ready(function () {
-    var QOptions = [
-        {
+    var QOptions = [{
             question: "Which river goes through London?",
             choices: ["Thames", "Ganges", "Yellow River", "River Severn"],
             answer: 1
         },
         {
-            question:"When was President Kennedy killed?",
+            question: "When was President Kennedy killed?",
             choices: ["1942", "1961", "1963", "1955"],
             answer: 3
         },
-        { 
+        {
             question: "What’s the smallest type of tree in the world?",
             choices: ["Ash", "Birch", "Bonsai", "Acacia"],
             answer: 3
@@ -85,14 +84,21 @@ $(document).ready(function () {
     function questionDisplay() {
 
         //randomizing objects in question array and creating a new randomized question array called current question
-        newIndex = Math.floor(Math.random()*QOptions.length);
+        newIndex = Math.floor(Math.random() * QOptions.length);
         currentQuestion = QOptions[newIndex];
 
         //displaying new question
 
         $("#questionText").text(currentQuestion.question);
 
-        
+        for (var i = 0; i < currentQuestion.choices.length; i++) {
+            choices = $("<p>");
+            choices.text(currentQuestion.choices[i]);
+            choices.attr("val", i);
+            $("#answerChoices").append("<br>" + currentQuestion.choices[i]);
+
+        };
+
     }
 
     //timer functions
@@ -121,9 +127,19 @@ $(document).ready(function () {
         clearInterval(intervalId);
     }
 
+    //when user answers by clicking
+ 
+        $("#answerChoices").on("click", function() {
+            userChoice = parseInt($(this).attr("val"));
+            
+            console.log(userChoice);
+            if (userChoice === currentQuestion.answer) {
+                
+            }
+            
+        });
 
-
-
+        
     reset();
 
 
