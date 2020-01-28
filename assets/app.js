@@ -72,6 +72,8 @@ $(document).ready(function () {
 
 
     function questionDisplay() {
+        
+        //improvement to make: make sure the radom questions don't repeat.
 
         //randomizing objects in question array and creating a new randomized question array called current question
         newIndex = Math.floor(Math.random() * QOptions.length);
@@ -139,27 +141,27 @@ $(document).ready(function () {
             stop();
             $("#questionText").text("You answered " + correctCount + " correct!")
             $("#answerChoices").empty();
-            //reset button
-            var resetButton = $("<img>")
-            resetButton.attr("src", "assets/images/resetButton.png");
-            resetButton.attr("id", "reset-button")
-            resetButton.attr("class", "reset")
-            $("#questionText").append(resetButton);
-            $(".reset").on("click", questionDisplay);
+
+            //improvement to make: reset button on click is not working
+
+            reset();
         }
 
     }
 
 
+
+
     //start button
     function reset() {
-        //shows start button 
+      
+        var resetButton = $("<img>")
+        resetButton.attr("src", "assets/images/resetButton.png");
+        resetButton.attr("id", "reset-button")
+        resetButton.attr("class", "reset")
+        $("#questionText").append(resetButton);
+        $("#reset-button").on("click", questionDisplay);
 
-        var startButton = $("<img>")
-        startButton.attr("src", "assets/images/startButton.png");
-        startButton.attr("id", "start-button")
-        $("#questionText").append(startButton);
-        $("#start-button").on("click", questionDisplay);
 
 
     };
