@@ -27,7 +27,7 @@ $(document).ready(function () {
         },
         {
             question: "Which two U.S. states don't observe Daylight Saving Time?",
-            choices: ["SAlaska and Hawaii", "Washington and New York", "Arizona and Hawaii", "Arizona and California"],
+            choices: ["Alaska and Hawaii", "Washington and New York", "Arizona and Hawaii", "Arizona and California"],
             answer: 2
         },
         {
@@ -132,20 +132,21 @@ $(document).ready(function () {
 
 
 
-            if ((correctCount + wrongCount) === QOptions.length) {
-                $("#questionText").text("You answered " + correctCount + " correct!")
-                $("#answerChoices").empty();
-                //reset button
-                var resetButton = $("<img>")
-                resetButton.attr("src", "assets/images/resetButton.png");
-                resetButton.attr("id", "reset-button")
-                $("#questionText").append(resetButton);
-                $("#reset-button").on("click", reset);
-
-
-            }
 
         });
+
+        if ((correctCount + wrongCount) === QOptions.length) {
+            stop();
+            $("#questionText").text("You answered " + correctCount + " correct!")
+            $("#answerChoices").empty();
+            //reset button
+            var resetButton = $("<img>")
+            resetButton.attr("src", "assets/images/resetButton.png");
+            resetButton.attr("id", "reset-button")
+            resetButton.attr("class", "reset")
+            $("#questionText").append(resetButton);
+            $(".reset").on("click", questionDisplay);
+        }
 
     }
 
@@ -194,10 +195,6 @@ $(document).ready(function () {
         clearInterval(intervalId);
         time = 16;
     }
-
-
-
-
 
 
 
