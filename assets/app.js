@@ -16,45 +16,45 @@ $(document).ready(function () {
             answer: 2
         },
         {
-            question: "What’s the smallest type of tree in the world?",
-            choices: ["Ash", "Birch", "Bonsai", "Acacia"],
+            question: " Which is the only mammal that can’t jump?",
+            choices: ["Gorilla", "Dolphin", "Kangaroo", "Elephant"],
+            answer: 3
+        },
+        {
+            question: "Which country consumes the most chocolate per capita?",
+            choices: ["Sweden", "Switzerland", "Denamrk", "Belgium"],
+            answer: 1
+        },
+        {
+            question: "Which two U.S. states don't observe Daylight Saving Time?",
+            choices: ["SAlaska and Hawaii", "Washington and New York", "Arizona and Hawaii", "Arizona and California"],
             answer: 2
         },
         {
-            question: "What’s the smallest type of tree in the world?",
-            choices: ["Ash", "Birch", "Bonsai", "Acacia"],
+            question: "What was the first toy to be advertised on television?",
+            choices: ["Hot Wheels", "Cabbage Patch Kids", "Woody", "Mr. Potato Head"],
+            answer: 3
+        },
+        {
+            question: "What is the loudest animal on Earth?",
+            choices: ["Sperm whale", "Cheetah", "Elephant", "Dogs"],
             answer: 2
         },
         {
-            question: "What’s the smallest type of tree in the world?",
-            choices: ["Ash", "Birch", "Bonsai", "Acacia"],
-            answer: 2
+            question: "Which planets in our solar system do not have moons?",
+            choices: ["Jupiter and Mercury", "Mercury and Venus", "Saturn and Jupiter", "Neptune and Uranus"],
+            answer: 1
         },
         {
-            question: "What’s the smallest type of tree in the world?",
-            choices: ["Ash", "Birch", "Bonsai", "Acacia"],
-            answer: 2
-        },
-        {
-            question: "What’s the smallest type of tree in the world?",
-            choices: ["Ash", "Birch", "Bonsai", "Acacia"],
-            answer: 2
-        },
-        {
-            question: "What’s the smallest type of tree in the world?",
-            choices: ["Ash", "Birch", "Bonsai", "Acacia"],
-            answer: 2
-        },
-        {
-            question: "What’s the smallest type of tree in the world?",
-            choices: ["Ash", "Birch", "Bonsai", "Acacia"],
-            answer: 2
+            question: "How many languages are written from right to left?",
+            choices: ["12", "22", "15", "5"],
+            answer: 0
         },
     ];
 
     //setting variables
     var clockRunning = false;
-    var time = 15;
+    var time = 16;
     var intervalId;
     var newIndex;
     var currentQuestion;
@@ -69,7 +69,7 @@ $(document).ready(function () {
     startButton.attr("id", "start-button")
     $("#questionText").append(startButton);
     $("#start-button").on("click", questionDisplay);
-    
+
 
     function questionDisplay() {
 
@@ -78,7 +78,11 @@ $(document).ready(function () {
         currentQuestion = QOptions[newIndex];
 
         //displaying new question
+
+
         timerStart();
+
+
 
         $("#questionText").text(currentQuestion.question);
 
@@ -137,7 +141,7 @@ $(document).ready(function () {
                 resetButton.attr("id", "reset-button")
                 $("#questionText").append(resetButton);
                 $("#reset-button").on("click", reset);
-                
+
 
             }
 
@@ -164,7 +168,7 @@ $(document).ready(function () {
     function timerStart() {
         clearInterval(intervalId);
         if (!clockRunning) {
-            intervalId = setInterval(decrement, 1500);
+            intervalId = setInterval(decrement, 1600);
             console.log("time countdonw starts now");
             clockRunning = true;
         }
@@ -188,7 +192,7 @@ $(document).ready(function () {
     function stop() {
         clockRunning = false;
         clearInterval(intervalId);
-        time = 15;
+        time = 16;
     }
 
 
